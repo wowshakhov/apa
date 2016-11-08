@@ -7,7 +7,7 @@ returns sum str1 + str2 (string)
 */
 function apsum(str1, str2) {
 	//check if operands are numeric
-	if (!str1.match(/^(\-)?\d+$/) || !str2.match(/^(\+|-)?\d+$/)) { 
+	if (!str1.match(/^(\-)?\d+$/) || !str2.match(/^(\-)?\d+$/)) { 
 		throw new Error('NaN');
 	}
 	var x = [];
@@ -85,7 +85,7 @@ str2 (string) - term 2
 returns diffrence str1 - str2 (string)
 */
 function apsub(str1, str2) {
-	if (!str1.match(/^(\+|-)?\d+$/) || !str2.match(/^(\-)?\d+$/)) {
+	if (!str1.match(/^(\-)?\d+$/) || !str2.match(/^(\-)?\d+$/)) {
 		throw new Error('NaN');
 	}
 	var xl = str1.length;
@@ -145,7 +145,7 @@ function apsub(str1, str2) {
 	}
 	s = s.substring(count);
 	if (less) s *= -1;
-	if (s.length == 0) return 0;
+	if (s.length == 0) return '0';
 	return s;
 }
 
@@ -194,7 +194,7 @@ str2 (string) - term 2
 returns product str1 * str2 (string)
 */
 function apmul(x, y) {
-	if (!x.match(/^(\+|-)?\d+$/) || !y.match(/^(\-)?\d+$/)) {
+	if (!x.match(/^(\-)?\d+$/) || !y.match(/^(\-)?\d+$/)) {
 		throw new Error('NaN');
 	}
 	var s = 0;
@@ -222,7 +222,7 @@ function apmul(x, y) {
 	if (less) {
 		s *= -1;
 	}
-	if (s.length == 0) return 0;
+	if (s.length == 0) return '0';
 	return s;
 }
 
