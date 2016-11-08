@@ -36,7 +36,7 @@ function apsum(str1, str2) {
 	if (str1[0] == '-' && str2[0] == '-') {
 		str1 = str1.substring(1);
 		str2 = str2.substring(1);
-		return -apsum(str1, str2);
+		return '-' + apsum(str1, str2);
 	}
 	var length = Math.max(x.length, y.length);
 	var ds = 0;
@@ -74,6 +74,7 @@ function apsum(str1, str2) {
 		count++;
 	}
 	s = s.substring(count);
+	if (s.length == 0) return '0';
 	return s;
 }
 
@@ -93,7 +94,7 @@ function apsub(str1, str2) {
 	var less = 0;
 	if (str1[0] == '-' && str2[0] != '-') {
 		str1 = str1.substring(1);
-		return -apsum(str1, str2);
+		return '-' + apsum(str1, str2);
 	}
 	if (str1[0] != '-' && str2[0] == '-') {
 		str2 = str2.substring(1);
@@ -220,7 +221,7 @@ function apmul(x, y) {
 	}
 	s = s.substring(count);
 	if (less) {
-		s *= -1;
+		s = '-' + s;
 	}
 	if (s.length == 0) return '0';
 	return s;
