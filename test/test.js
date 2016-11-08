@@ -1,5 +1,5 @@
 var assert = require('assert');
-var apa = require('../apa.js')
+var apa = require('../apa.js');
 
 describe('addition', function() {
 	it('positive + positive', function() {
@@ -56,6 +56,5 @@ describe('multiplication', function() {
 	it('NaN', function() {
 		assert.throws( function() { apa.apsum("", ""); }, Error, 'throws NaN on invalid input')
 	});
-
 })
 
