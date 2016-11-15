@@ -82,6 +82,12 @@ function removeLeadingZeroes(s) {
     return s;
 }
 
+/**
+ * Checks if arguments are valid integer numbers with or without minus sign 
+ * @param  {string} str1 
+ * @param  {string} str2 
+ * @throws {Error} If str1 or str2 isn't a number
+ */
 function checkArgs(str1, str2) {
     if (!str1.match(/^(\-)?\d+$/) || !str2.match(/^(\-)?\d+$/)) { 
         throw new Error('NaN');
